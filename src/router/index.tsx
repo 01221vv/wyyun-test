@@ -1,10 +1,6 @@
 import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
-// import Home from '@/views/home/index';
-// import Discover from '@/views/discover/index';
-// import Focus from '@/views/focus/index';
-// import Mine from '@/views/mine/index';
-const Home = lazy(() => import('@/views/home/index'));
+
 const Discover = lazy(() => import('@/views/discover/index'));
 const Focus = lazy(() => import('@/views/focus/index'));
 const Mine = lazy(() => import('@/views/mine/index'));
@@ -15,10 +11,10 @@ const Singer = lazy(() => import('@/views/discover/c-views/singer/index'));
 const Songs = lazy(() => import('@/views/discover/c-views/songs/index'));
 const Video = lazy(() => import('@/views/discover/c-views/video/index'));
 const routes: RouteObject[] = [
-  {
-    path: '/',
-    element: <Home />
-  },
+  // {
+  //   path: '/',
+  //   element: <Discover />
+  // },
   {
     path: '/focus',
     element: <Focus />
@@ -29,9 +25,13 @@ const routes: RouteObject[] = [
   },
 
   {
-    path: '/discover',
+    path: '/',
     element: <Discover />,
     children: [
+      {
+        path: '', // 默认子路由
+        element: <Recommed />
+      },
       {
         path: '/discover/newSongs',
         element: <NewSongs />
@@ -58,11 +58,6 @@ const routes: RouteObject[] = [
       }
     ]
   }
-
-  // {
-  //     path: '/login',
-  //     element: <Login />,
-  // }
 ];
 
 export default routes;

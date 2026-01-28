@@ -24,6 +24,10 @@ root.render(
             darkItemBg: '#242424', // 暗色模式菜单背景
             darkItemSelectedBg: '#000000ff', // 选中项背景色（使用你的主色调）
             darkItemHoverBg: '#242424' // hover 背景色（带透明度）
+          },
+          Carousel: {
+            // 暗色主题相关配置
+            arrowSize: 24
           }
         }
       }}

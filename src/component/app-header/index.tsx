@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import type { ReactNode, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import type { ReactNode } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { AppHeaderWrapper } from './styled';
-
 import { SearchOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Input } from 'antd';
+
 interface IProps {
-  // 定义组件的属性类型
   children?: ReactNode;
 }
 type MenuItem = Required<MenuProps>['items'][number];
+
 const items: MenuItem[] = [
   {
-    label: <Link to="/discover">发现音乐</Link>,
+    label: <Link to="/">发现音乐</Link>,
     key: '/discover'
   },
   {
@@ -30,18 +30,15 @@ const items: MenuItem[] = [
   },
   {
     label: <Link to="/download">占位1</Link>,
-    key: '/download'
+    key: '/home'
   },
   {
     label: <Link to="/download">占位2</Link>,
-    key: '/download'
+    key: '/notFound'
   }
 ];
+
 const AppHeader: React.FC<IProps> = props => {
-  // const onClick: MenuProps['onClick'] = e => {
-  //   console.log(e);
-  //   // 导航逻辑由Link组件处理，这里只做日志记录
-  // };
   return (
     <AppHeaderWrapper>
       <div className="content">
@@ -49,6 +46,7 @@ const AppHeader: React.FC<IProps> = props => {
           <div className="logo">
             <img src={require('@/assets/img/logo.png')} alt="logo" />
           </div>
+
           <Menu
             className="navItem"
             theme="dark"

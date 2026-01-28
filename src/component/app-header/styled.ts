@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import theme from '@/assets/theme/index';
+
 export const AppHeaderWrapper = styled.div`
   .content {
     width: 100%;
@@ -19,11 +19,51 @@ export const AppHeaderWrapper = styled.div`
     display: inline-block;
   }
   .navItem {
+    position: relative;
     height: 100%;
     line-height: 10vh;
     width: 70vh;
     display: flex;
     align-items: center;
+
+    /* 为每个菜单项添加after伪元素作为三角形 */
+    .ant-menu-item {
+      position: relative;
+      padding: 0 20px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* 使用::after伪元素创建三角形 
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #3bce51; /* 绿色向上的三角形 */
+        opacity: 1; /* 始终显示 */
+        transition: all 0.3s ease;
+      }
+*/
+      /* 链接样式 */
+      a {
+        display: inline-block;
+        padding: 0 5px;
+        color: #ccc;
+        text-decoration: none;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      }
+    }
   }
   .user {
     display: flex;

@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { counterReducer } from './moudle/couter';
+import recommendReducer from '../views/discover/c-views/recommed/store';
 import {
   useSelector,
   TypedUseSelectorHook,
@@ -9,7 +10,8 @@ import {
 const store = configureStore({
   reducer: {
     // discover: discoverReducer,
-    counter: counterReducer
+    counter: counterReducer,
+    recommend: recommendReducer
   }
 });
 export type IRootState = ReturnType<typeof store.getState>;
