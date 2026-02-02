@@ -31,7 +31,6 @@ export const fetchSingerListDataAction = createAsyncThunk(
   async (args, { dispatch }) => {
     const res = await getSingerList(10);
     dispatch(setSingerList(res.artists));
-    console.log(res.artists);
     return res.artists;
   }
 );
@@ -55,12 +54,11 @@ export const fetchRankListDataAction = createAsyncThunk(
     for (const id of RankIDlist) {
       const res = await getRankList(id);
       rankListData.push(res);
-      console.log('Rank data for ID', id, ':', res);
     }
 
     // 发送完整的排行榜数据到store
     dispatch(setRankList(rankListData));
-
+    console.log(rankListData);
     return rankListData;
   }
 );

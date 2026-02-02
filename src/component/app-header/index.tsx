@@ -46,13 +46,15 @@ const AppHeader: React.FC<IProps> = props => {
           <div className="logo">
             <img src={require('@/assets/img/logo.png')} alt="logo" />
           </div>
+          <div>
+            <Menu
+              className="navItem"
+              theme="dark"
+              mode="horizontal"
+              items={items}
+            />
+          </div>
 
-          <Menu
-            className="navItem"
-            theme="dark"
-            mode="horizontal"
-            items={items}
-          />
           <div className="user">
             <Input
               type="text"

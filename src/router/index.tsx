@@ -10,6 +10,7 @@ const Recommed = lazy(() => import('@/views/discover/c-views/recommed/index'));
 const Singer = lazy(() => import('@/views/discover/c-views/singer/index'));
 const Songs = lazy(() => import('@/views/discover/c-views/songs/index'));
 const Video = lazy(() => import('@/views/discover/c-views/video/index'));
+const Player = lazy(() => import('@/views/player/index'));
 const routes: RouteObject[] = [
   // {
   //   path: '/',
@@ -23,7 +24,10 @@ const routes: RouteObject[] = [
     path: '/mine',
     element: <Mine />
   },
-
+  {
+    path: '/player',
+    element: <Player />
+  },
   {
     path: '/',
     element: <Discover />,

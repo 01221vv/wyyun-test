@@ -7,7 +7,7 @@ export const SongStyle = styled.div`
     position: relative;
   }
   .song-img {
-    width: 20vh;
+    width: 100%;
     height: 20vh;
   }
   .song-img img {
@@ -16,18 +16,18 @@ export const SongStyle = styled.div`
     object-fit: cover;
   }
   .song-info {
-    width: 20vh;
+    width: 100%;
   }
   .song-info-title {
-    width: 20vh;
-    background-color: #3bce51;
+    width: 100%;
+
     font-size: 2vh;
   }
   .song-info-desc {
     position: absolute;
     top: 16vh;
     left: 0;
-    width: 20vh;
+    width: 100%;
     height: 4vh;
     line-height: 4vh;
     background-color: #00000080;

@@ -1,4 +1,3 @@
-import hyRequest from '@/service/index';
 import React, { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { useAppDispatch } from '@/store/index';

@@ -6,6 +6,10 @@ interface IProps {
   children?: ReactNode;
 }
 const AppFooter: React.FC<IProps> = props => {
-  return <div>home</div>;
+  return (
+    <div style={{ height: 100, textAlign: 'center' }}>
+      最后没有什么东西，填充一下
+    </div>
+  );
 };
 export default AppFooter;

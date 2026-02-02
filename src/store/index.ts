@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from './moudle/couter';
+import CurrentSongId from './moudle/getIdToPlay';
+// import playerReducer from '../views/player/store';
 import recommendReducer from '../views/discover/c-views/recommed/store';
+import readySongReducer from './moudle/readySong';
 import {
   useSelector,
   TypedUseSelectorHook,
@@ -10,8 +12,11 @@ import {
 const store = configureStore({
   reducer: {
     // discover: discoverReducer,
-    counter: counterReducer,
-    recommend: recommendReducer
+    // counter: counterReducer,
+    currentSong: CurrentSongId,
+    recommend: recommendReducer,
+    readySong: readySongReducer
+    // player: playerReducer
   }
 });
 export type IRootState = ReturnType<typeof store.getState>;

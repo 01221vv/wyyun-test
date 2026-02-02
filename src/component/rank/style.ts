@@ -1,20 +1,17 @@
 import styled from 'styled-components';
 export const RankStyle = styled.div`
-width:100%;
-. display: flex;
- 
-  
+  width: 100%;
+  display: flex;
   background-color: #f5f5f5;
 
   .ranking-card {
     flex: 1;
-   width:100%;
+    width: 100%;
     border: 1px solid #eaeaea;
-   
+
     overflow: hidden;
     font-family: sans-serif;
     background-color: #fff;
-  
 
     .header {
       display: flex;
@@ -62,7 +59,8 @@ width:100%;
         display: flex;
         align-items: center;
         padding: 8px 12px;
-
+        width: 100%;
+        height: 1.5vw;
         &:hover {
           background-color: #f5f5f5;
         }

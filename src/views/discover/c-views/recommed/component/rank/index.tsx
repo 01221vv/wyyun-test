@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import type { ReactNode } from 'react';
 import { RankStyle } from './style';
 import CRank from '@/component/rank/index';
@@ -16,6 +16,7 @@ const Rank: React.FC<IProps> = props => {
   // 从RankList中提取歌曲列表
   // 确保RankList是数组且有足够的数据
   const getSongList = (index: number) => {
+    console.log(RankList);
     if (
       Array.isArray(RankList) &&
       RankList[index] &&
@@ -27,7 +28,19 @@ const Rank: React.FC<IProps> = props => {
         .map((track: any) => track.name);
     }
   };
-
+  //获取歌曲id
+  const getSongId = (index: number) => {
+    if (
+      Array.isArray(RankList) &&
+      RankList[index] &&
+      RankList[index].playlist &&
+      RankList[index].playlist.tracks
+    ) {
+      return RankList[index].playlist.tracks
+        .slice(0, 10)
+        .map((track: any) => track.id);
+    }
+  };
   // 获取排行榜标题
   const getRankTitle = (index: number) => {
     if (
@@ -51,6 +64,7 @@ const Rank: React.FC<IProps> = props => {
           title={getRankTitle(0)}
           arr={getSongList(0)}
           iconText={getRankTitle(0)}
+          id={getSongId(0)}
         />
 
         {/* 新歌榜 */}
@@ -58,6 +72,7 @@ const Rank: React.FC<IProps> = props => {
           title={getRankTitle(1)}
           arr={getSongList(1)}
           iconText={getRankTitle(1)}
+          id={getSongId(1)}
         />
 
         {/* 原创榜 */}
@@ -65,6 +80,7 @@ const Rank: React.FC<IProps> = props => {
           title={getRankTitle(2)}
           arr={getSongList(2)}
           iconText={getRankTitle(2)}
+          id={getSongId(2)}
         />
       </RankStyle>
     </div>

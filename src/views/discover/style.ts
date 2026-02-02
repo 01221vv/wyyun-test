@@ -4,15 +4,18 @@ export const DiscoverWrapper = styled.div`
     height: 4vh;
   }
   .discover-nav {
-    background-color: #77f181ff;
+    background-color: #fa3402ff;
     height: 4vh;
     line-height: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    ${props => props.theme.mixin.wrapV1};
+    & hover {
+      background-color: #9b0909;
+    }
   }
   .nav-item {
+    font-size: 14px;
     height: 100%;
     line-height: 4vh;
     text-align: center;
@@ -20,7 +23,7 @@ export const DiscoverWrapper = styled.div`
     padding: 0 1.042vw; /* 20px */
     &:hover {
       border-radius: 1.042vw; /* 20px */
-      background-color: #79b8ecff;
+      background-color: #9b0909;
     }
   }
 `;
